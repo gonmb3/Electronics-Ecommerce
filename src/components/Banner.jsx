@@ -14,7 +14,7 @@ const Banner = () => {
                 <Link to="/productos"  className="btn px-1  mt-10 " >Comprar </Link>
             </div>
             <div className="">
-                <img src="/public/img/banner-img.png" alt="" />
+                <img src="/img/banner-img.png" alt="" />
             </div>
         </div>
     </div>

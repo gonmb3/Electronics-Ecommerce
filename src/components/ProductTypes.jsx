@@ -5,19 +5,19 @@ const ProductTypes = () => {
   
   const productTypeData = [
     {
-      img: "/public/img/Mobile Phone.png",
+      img: "/img/Mobile Phone.png",
       text: "Celulares",
     },
     {
-      img: "/public/img/headphone.png",
+      img: "/img/headphone.png",
       text: "Auriculares",
     },
     {
-      img: "/public/img/smart watch.png",
+      img: "/img/smart watch.png",
       text: "Relojes",
     },
     {
-      img: "/public/img/cpu heat.jpg",
+      img: "/img/cpu heat.jpg",
       text: "Procesadores",
     },
   ];

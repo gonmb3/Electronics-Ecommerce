@@ -14,7 +14,7 @@ const Hero = () => {
         </div>
             {/* img  */}
         <div className="">
-                <img src="/public/img/slider-img.png" alt="img-banner" className='w-[500px] h-full' />
+                <img src="/img/slider-img.png" alt="img-banner" className='w-[500px] h-full' />
         </div>
     </div>
    </div>
