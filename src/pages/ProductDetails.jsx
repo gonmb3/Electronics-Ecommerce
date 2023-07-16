@@ -15,20 +15,20 @@ const ProductDetails = () => {
     }, [ id ]);
 
   return (
-    <div
-    >
-        <div 
-        
-        className="w-full   flex justify-center ">
+    <div className=''>
+      
+        <div     
+        className="w-full flex justify-center ">
             {
                 closeDetails ? (
                     productDetails.map(product => (
-                        <div 
+                        <>
+                         <div 
                         data-aos="fade-up"
                         data-aos-duration="1000"
                         data-aos-delay="10"
                         data-aos-offset="200"
-                        className="fixed  flex top-[22%] justify-center md:h-[560px] w-[90%] md:w-[80%] lg:w-[75%] xl:w-[57%] z-20 rounded-lg shadow-2xl border border-gray-300 bg-white">
+                        className="fixed  flex top-[22%] justify-center md:h-[560px] w-[90%] md:w-[80%] lg:w-[75%] xl:w-[57%] z-20 rounded-lg shadow-2xl border border-gray-300 bg-white z-50">
                             {/* close modal btn */}
                            <button className='p-5 absolute -left-3 -top-3' onClick={() => setCloseDetails(false) }> 
                            <AiOutlineCloseCircle size={25} />
@@ -55,6 +55,11 @@ const ProductDetails = () => {
                             </div>
                            </div>
                         </div>
+
+                        <div className="w-full h-full  bg-black/50 fixed top-0  bottom-0 left-0 right-0 z-40"></div>
+                        </>
+
+                       
                     ))
                 ) : null
             }

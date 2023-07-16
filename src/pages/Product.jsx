@@ -72,11 +72,11 @@ const Product = () => {
             <div className=" w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-5 mx-auto ">
              
               {product.length === 0 ? (
-                <>
+                <div className="h-[60vh] w-full flex-colo">
                   <h2 className="text-center font-bold text-[16px] md:w-[500px] mt-10 md:mt-0  md:text-[18px] text-main px-5">
                     Producto No Encontrado...{" "}
                   </h2>
-                </>
+                </div>
               ) : (
                 product.map((product) => (
                   <div className="w-[80%] md:w-[240px] h-[350px] mx-auto overflow-hidden img-product relative cursor-pointer   py-2 px-3 border border-dryGray rounded shadow-2xl transitions hover:border-border flex-colo">
