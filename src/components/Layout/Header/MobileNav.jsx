@@ -42,7 +42,7 @@ const MobileNav = ({isAuthenticated , logout, activeNav,user, loginWithRedirect}
     >
       {/*NAV LINKS DATA */}
       <ul className="flex flex-col  gap-y-8 items-end mx-auto absolute top-28 right-5 text-[15px] text-white uppercase font-bold ">
-        <div className="cursor-pointer block md:hidden  ">
+        <div className="cursor-pointer block md:hidden  mt-8 ">
           {/* LOGOUT & LOGIN */}
           {isAuthenticated ? (
             <div
@@ -53,7 +53,7 @@ const MobileNav = ({isAuthenticated , logout, activeNav,user, loginWithRedirect}
               }
               className="flex-rows"
             >
-              <p className="px-2 text-md ">
+              <p className="px-2 text-md capitalize ">
                 Bienvenido,{" "}
                 <span className="font-bold capitalize">
                   {/* user name */}
