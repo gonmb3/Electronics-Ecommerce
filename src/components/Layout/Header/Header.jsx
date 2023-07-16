@@ -70,7 +70,9 @@ const Header = () => {
           {/* logo */}
           <div className="hidden md:block">
          <Link to ="/">
-         <h1 className="text-2xl font-bold linear-bg px-3 py-1 text-white rounded-sm ">ELECTRONICS</h1>
+         <h1 className="text-2xl font-bold linear-bg px-3 py-1 text-white rounded-sm  ">
+          ELECTRONICS
+          </h1>
          </Link>
           </div>
           {/* saerch container */}
