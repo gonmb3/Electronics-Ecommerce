@@ -40,6 +40,7 @@ const Product = () => {
     <Layout>
       <h2 className="h2 my-8">Productos</h2>
       <div className="">
+        {/*Productdetails component */}
       <ProductDetails/>
         <div className="container mx-auto md:flex justify-evenly gap-4 ">
           {/*filters */}
@@ -68,7 +69,7 @@ const Product = () => {
             </div>
           </div>
           <div className="">
-            <div className=" w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4   gap-5 mx-auto">
+            <div className=" w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-5 mx-auto ">
              
               {product.length === 0 ? (
                 <>
@@ -78,7 +79,7 @@ const Product = () => {
                 </>
               ) : (
                 product.map((product) => (
-                  <div className="w-[80%] md:w-[240px] h-[350px] mx-auto overflow-hidden img-product  cursor-pointer relative py-2 px-3 border border-dryGray rounded shadow-2xl transitions hover:border-border flex-colo">
+                  <div className="w-[80%] md:w-[240px] h-[350px] mx-auto overflow-hidden img-product relative cursor-pointer   py-2 px-3 border border-dryGray rounded shadow-2xl transitions hover:border-border flex-colo">
                     <div className="">
                       {/* img */}
                       <img

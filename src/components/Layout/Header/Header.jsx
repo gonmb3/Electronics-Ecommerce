@@ -3,20 +3,27 @@ import { BsSearch, BsHandbag } from "react-icons/bs";
 import {RiLogoutBoxLine} from "react-icons/ri"
 import { AiOutlineHeart, AiOutlineUser } from "react-icons/ai";
 import {HiOutlineBars3BottomRight} from "react-icons/hi2"
-import { Link } from "react-router-dom";
+
+import { Link, useNavigate } from "react-router-dom";
 
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
 import { useAppContext } from "../../../context/AppProvider";
+import MobileNav from "./MobileNav";
+
+
+import {  toast } from 'react-toastify';
 
 const Header = () => {
   //Auth0 (login, logout)
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
   {/* search input state */}
-  const [search, setSearch ] = useState();
+  const [search, setSearch ] = useState()
 
   //react context hook
   const {searchBtn, cart} = useAppContext();
+
+  const navigate = useNavigate();
 
   //nav links
   const navLinks = [
@@ -34,10 +41,21 @@ const Header = () => {
     },
   ];
 
+
+    //mobile nav
+    const [activeNav, setActive] = useState(false);
+    //mobilenav links
+   
+    const handleActive = () => {
+      setActive(!activeNav);
+    };
+
+
+
   return (
-    <>
+    <div className="fixed right-0 top-0 left-0 md:static  z-40">
       {/*sub header (blue header)*/}
-      <div className="w-full hidden md:block bg-subMain p-3">
+      <div className="w-full hidden md:block bg-subMain p-3  ">
         <div className=" flex items-center gap-x-5 container mx-auto ">
           <RiTruckLine className="text-star " size={35} />{" "}
           <p className="text-white font-bold md:text-[17px]">
@@ -47,8 +65,8 @@ const Header = () => {
       </div>
 
       {/* Main header */}
-      <div className="w-full border-b border-subMain">
-        <div className="container mx-auto flex items-center justify-between py-4">
+      <div className="w-full border-b border-subMain bg-white ">
+        <div className="md:container mx-auto  flex items-center justify-between py-4">
           {/* logo */}
           <div className="hidden md:block">
          <Link to ="/">
@@ -67,7 +85,11 @@ const Header = () => {
             />
             {/* saerch icon */}
             <button
-            onClick={() => searchBtn(search)}
+            onClick={() =>{
+              !search ? toast.info("Buscar Producto!") :
+               searchBtn(search)
+               navigate("/productos")
+              }}
              className="bg-main  border-2 border-main  px-4 py-3 text-white flex-btn">
               <BsSearch size={22} />{" "}
             </button>
@@ -123,7 +145,7 @@ const Header = () => {
           </div>
 
                   {/* BURGER ICON & MOBILE MENU */}
-          <div className="md:hidden cursor-pointer text-main ml-10 md:ml-0 ">
+          <div onClick={handleActive } className={`${activeNav ? "text-white" : "text-main"} md:hidden cursor-pointer  mr-5  md:ml-0 z2` } >
           <HiOutlineBars3BottomRight size={42} />
           </div>
         </div>
@@ -131,7 +153,7 @@ const Header = () => {
       </div>
 
       {/* NAV LINKS HEADER */}
-      <div className="hidden md:block w-full shadow-xl">
+      <div className="hidden md:block w-full shadow-xl bg-white">
         <div className="container mx-auto py-4 ">
           {/*NAV LINKS DATA */}
           <ul className="flex gap-x-3 items-center  text-[18px] ">
@@ -143,7 +165,10 @@ const Header = () => {
           </ul>
         </div>
       </div>
-    </>
+
+     <MobileNav isAuthenticated={isAuthenticated}  logout={logout}  activeNav={activeNav} user={user} loginWithRedirect={loginWithRedirect} />
+    
+    </div>
   );
 };
 

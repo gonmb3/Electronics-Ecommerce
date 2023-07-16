@@ -28,7 +28,7 @@ const ProductDetails = () => {
                         data-aos-duration="1000"
                         data-aos-delay="10"
                         data-aos-offset="200"
-                        className="fixed  flex top-[22%] justify-center md:h-[560px] w-[90%] md:w-[80%] lg:w-[75%] xl:w-[57%] z-50 rounded-lg shadow-2xl border border-gray-300 bg-white">
+                        className="fixed  flex top-[22%] justify-center md:h-[560px] w-[90%] md:w-[80%] lg:w-[75%] xl:w-[57%] z-20 rounded-lg shadow-2xl border border-gray-300 bg-white">
                             {/* close modal btn */}
                            <button className='p-5 absolute -left-3 -top-3' onClick={() => setCloseDetails(false) }> 
                            <AiOutlineCloseCircle size={25} />

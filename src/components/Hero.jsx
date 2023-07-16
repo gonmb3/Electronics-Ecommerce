@@ -3,7 +3,7 @@ import { IoMdArrowRoundForward } from 'react-icons/io'
 
 const Hero = () => {
   return (
-    <div className="bg-dryGray py-10  px-5 md:px-0 ">
+    <div className="bg-dryGray py-10 mt-16 md:mt-0  px-5 md:px-0 ">
     <div className="container mx-auto flex justify-between items-center">
         <div className="">
                 <h2 className='font-bold text-3xl  md:text-4x lg:text-5xl my-3 '>Las Mejores Notebooks 2023</h2>
